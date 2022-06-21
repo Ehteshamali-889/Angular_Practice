@@ -1,0 +1,44 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-test',
+  // templateUrl: './test.component.html',
+  // template: '<div>Inline</div>',
+  template: `
+  <!-- <div *ngFor="let color of colors;index as i" >
+   {{i}}   {{color}}
+  
+  </div> -->
+  <!-- <div *ngFor="let color of colors;first as f" >
+   {{f}}   {{color}}
+  
+  </div> -->
+  <!-- <div *ngFor="let color of colors;last as l" >
+   {{l}}   {{color}}
+  
+  </div> -->
+  <div *ngFor="let color of colors;odd as o" >
+   {{o}}   {{color}}
+  
+  </div>
+  <!-- <div *ngFor="let color of colors;even as e" >
+   {{e}}   {{color}}
+  
+  </div> -->
+
+  `,
+  // styleUrls: ['./test.component.css']
+  styles: []
+})
+export class TestComponent implements OnInit {
+  
+  public colors=["red","blue"];
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+  
+  
+
+}
