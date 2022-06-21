@@ -1,0 +1,45 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-test',
+  // templateUrl: './test.component.html',
+  // template: '<div>Inline</div>',
+  template: `
+  <div>
+
+    <!-- <h2 *ngIf="display;else elseblock">
+    Hello
+    </h2>
+    <ng-template #elseblock>
+      <h2>
+      Else
+      </h2>
+    </ng-template> -->
+    <div *ngIf="display;then thanblock;else elseblock"></div>
+    <ng-template #thanblock>
+      <h2>
+      Than
+      </h2>
+    </ng-template>
+    <ng-template #elseblock>
+      <h2>
+      Else
+      </h2>
+    </ng-template>
+  
+  </div>`,
+  // styleUrls: ['./test.component.css']
+  styles: []
+})
+export class TestComponent implements OnInit {
+  
+  public display=false;
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+  
+  
+
+}
