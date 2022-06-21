@@ -1,0 +1,45 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-test',
+  // templateUrl: './test.component.html',
+  // template: '<div>Inline</div>',
+  template: `
+  <div>
+  Inline {{name}}
+  <p [style.color]="'orange'">Hello</p>
+  <p [style.color]="hasError?'red':'green'">Hello</p>
+  <p [style.color]="highlightColor">Hello</p>
+  <p [ngStyle]="titleStyles">Hello</p>
+  </div>`,
+  // styleUrls: ['./test.component.css']
+  styles: [`
+    .text-success{
+      color:green
+    }
+    .text-danger{
+      color:red
+    }
+    .text-special{
+      font-style:italic
+    }
+  `]
+})
+export class TestComponent implements OnInit {
+  public name="Ali";
+  public successClass="text-success";
+  public hasError=true;
+  public highlightColor="orange";
+  public titleStyles={
+    color:"blue",
+    fontStyle:"italic"
+  }
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+  greetUser(){
+    return "Hello"+this.name;
+  }
+
+}
